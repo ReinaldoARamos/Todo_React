@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     padding: 2rem;
-
+    object-fit: cover;
 
 }
 
@@ -17,9 +17,17 @@ top: 72px;
 .createTask{
     display: flex;
     justify-content: center;
+    position: relative;
+    margin-top: -0.6rem;
+    
 }
 .input{
-
+    width: 638px;
+    height: 54px;
+    border-radius: 8px;
+    color: var(--grey-300);
+    background: var(--grey-600);
+    border: none;
 }
 
 .button{
@@ -34,5 +42,8 @@ border-radius: 8px;
 margin-left: 0.5rem;
 flex: none;
 order: 1;
+gap: 0.3rem;
 flex-grow: 0;
+color: white;
 }
+
