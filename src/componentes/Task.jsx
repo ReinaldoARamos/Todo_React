@@ -3,6 +3,8 @@ import ClipboardLogo from "../assets/Clipboard.svg"
 export function Task() {
     const counter = 0
     return(
+        <div></div>
+        /*
         <div>
           <div className={styles.AllTasks}>
             <span className={styles.Created}>
@@ -27,6 +29,6 @@ export function Task() {
          
 
           </div>
-        </div>
-    )
+        </div> */
+    ) 
 }

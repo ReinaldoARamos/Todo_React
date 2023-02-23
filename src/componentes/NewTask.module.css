@@ -1,0 +1,39 @@
+.Task {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  /*
+  top: 334px;
+  bottom: 282px;
+  left: 352px;
+  right: 352px;
+  */
+  gap: 12px;
+
+  width: 736px;
+  height: 408px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.Task li {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  background-color: aliceblue;
+  width: 736px;
+  height: 72px;
+  padding: 16x;
+  border-radius: 8px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
