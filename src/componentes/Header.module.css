@@ -25,9 +25,11 @@ top: 72px;
     width: 638px;
     height: 54px;
     border-radius: 8px;
-    color: var(--grey-300);
+    color: white;
     background: var(--grey-600);
     border: none;
+    padding-left: 1rem;
+    
 }
 
 .button{
@@ -53,3 +55,7 @@ color: white;
     transition: 0.2s ;
 }
 
+.input::placeholder{
+    color: var(--grey-300);
+  
+}

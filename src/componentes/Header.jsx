@@ -9,9 +9,8 @@ export function Header() {
       <header className={styles.header}>
         <img src={logo} className={styles.logo} />
       </header>
-      
       <div className={styles.createTask}>
-      <input className={styles.input} placeholder={"    Adicione uma tarefa aqui"} />
+      <input className={styles.input} placeholder={"Adicione uma tarefa aqui"} />
       <button  className={styles.button}>
         
         Criar
