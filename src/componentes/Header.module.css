@@ -45,5 +45,11 @@ order: 1;
 gap: 0.3rem;
 flex-grow: 0;
 color: white;
+ transition: 0.2s ;
+}
+
+.button:hover{
+    background-color: #4EA8DE;
+    transition: 0.2s ;
 }
 

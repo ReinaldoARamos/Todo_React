@@ -11,7 +11,7 @@ color: var(--grey-300);
 :root{
   --white: #fff;
   --grey-100: #e1e1e6;
-  --grey-300: #808080;
+  --grey-300: rgba(128, 128, 128, 1);
   --grey-400: #8d8d99 ;
   --grey-600: #323238 ;
   --grey800: #28282e ;
