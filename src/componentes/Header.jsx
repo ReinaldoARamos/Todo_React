@@ -14,7 +14,7 @@ export function Header() {
       <button  className={styles.button}>
         
         Criar
-        
+        <PlusCircle size={20}/>
         </button>
       </div>
      
