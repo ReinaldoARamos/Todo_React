@@ -44,7 +44,7 @@
   background: #333333;
   border-radius: 999px;
   color: #d9d9d9;
-  background: green;
+  background: var(--grey-300);
   border-radius: 8px;
 }
 
