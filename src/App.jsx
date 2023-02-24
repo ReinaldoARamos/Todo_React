@@ -11,6 +11,9 @@ function App() {
             <Header />
            <Task/>
            <NewTask/>
+           <NewTask />
+           <NewTask />
+
         </div>
         
     )

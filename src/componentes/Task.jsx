@@ -3,8 +3,7 @@ import ClipboardLogo from "../assets/Clipboard.svg"
 export function Task() {
     const counter = 0
     return(
-        <div></div>
-        /*
+        
         <div>
           <div className={styles.AllTasks}>
             <span className={styles.Created}>
@@ -20,7 +19,13 @@ export function Task() {
             </div>
          <footer className={styles.Line}></footer>
             
-          <div className={styles.Clipboard}>
+            
+          
+        </div> 
+    ) 
+}
+/*
+<div className={styles.Clipboard}>
             <span>
                 <img src={ClipboardLogo}/>
                 Você ainda não tem tarefas criadas
@@ -29,6 +34,4 @@ export function Task() {
          
 
           </div>
-        </div> */
-    ) 
-}
+*/

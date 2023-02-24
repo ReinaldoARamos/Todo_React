@@ -1,29 +1,5 @@
 .Task {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  /*
-  top: 334px;
-  bottom: 282px;
-  left: 352px;
-  right: 352px;
-  */
-  gap: 12px;
-
-  width: 736px;
-  height: 408px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.Task li {
-  display: flex;
   flex-direction: row;
   box-sizing: border-box;
   justify-content: flex-start;
@@ -34,6 +10,30 @@
   border-radius: 8px;
   flex: none;
   order: 0;
+  text-decoration: none;
+
   align-self: stretch;
   flex-grow: 0;
+  align-items: center;
+  padding-left: 15px;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-left: 24rem;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1rem;
+
+  color: #f2f2f2;
+  background-color: rgba(51, 51, 51, 1);
+}
+
+.circle {
+  color: #1e6f9f;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+
 }
