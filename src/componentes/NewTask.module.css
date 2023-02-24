@@ -17,7 +17,7 @@
   align-items: center;
   padding-left: 15px;
   margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-left: 24rem;
   font-family: "Inter";
   font-style: normal;
@@ -35,5 +35,10 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
-
+transition: 0.2s;
 }
+
+.circle:hover{
+  color: #5E60CE;
+}
+
