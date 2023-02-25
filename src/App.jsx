@@ -4,7 +4,7 @@ import { Header } from './componentes/Header'
 import { NewTask } from './componentes/NewTask'
 
 
-const tasks = [    {
+export const tasks = [    {
     id: 1,
     content: "Oi"
     
@@ -22,7 +22,7 @@ const tasks = [    {
   function App() {
     return(
         <div>
-            <Header />
+            <Header />  
            <Task/>
            <main>
             {tasks.map(tasks =>{
