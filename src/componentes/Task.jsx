@@ -1,7 +1,11 @@
 import styles from "../componentes/Task.module.css"
 import ClipboardLogo from "../assets/Clipboard.svg"
 import { PlusCircle } from "phosphor-react"
-export function Task() {
+import { NewTask } from "./NewTask"
+import { tasks } from "./NewTask"
+
+
+export function Task({content}) {
     const counter = 0
     return(
         
@@ -32,9 +36,20 @@ export function Task() {
                 </span>
               
             </div>
+            <main>
+           
          <footer className={styles.Line}></footer>
             
-            
+         {tasks.map(tasks =>{
+                return(
+                 <NewTask 
+                 key={tasks.id}
+                 content={tasks.content}
+                 />
+                )
+            })}
+           </main>
+           
           
         </div> 
     ) 
