@@ -41,4 +41,16 @@ transition: 0.2s;
 .circle:hover{
   color: #5E60CE;
 }
+.Delete{
+  padding: 10px 10px 10px;
+  margin-bottom: 5px;
+  background: transparent;
+  color: var(--grey-300);
+  border: none;  
+  transition: 0.2s;
+  cursor: pointer;
+}
 
+.Delete:hover{
+  color: #F75A68
+}

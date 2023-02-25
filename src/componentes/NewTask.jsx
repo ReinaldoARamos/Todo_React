@@ -14,7 +14,7 @@ export function NewTask() {
           voluptatum laborum
         
         </span>
-        <Trash size={20} />
+        <button className={styles.Delete}><Trash size={20} /> </button>
       </div>
     </div>
   );
