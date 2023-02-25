@@ -1,10 +1,11 @@
 import styles from "../componentes/NewTask.module.css";
-
+import { useState } from "react";
 import { Circle, Trash} from "phosphor-react";
 
   
 
 export function NewTask({content} ) {
+  const [newTask, setNewTask] = useState('');
   return (
     <div>
       <div className={styles.Task}>

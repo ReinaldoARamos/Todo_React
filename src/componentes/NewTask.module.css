@@ -43,7 +43,7 @@ transition: 0.2s;
 }
 .Delete{
   
-  
+  margin-left: 100px;
   margin-bottom: 5px;
   background: transparent;
   color: var(--grey-300);

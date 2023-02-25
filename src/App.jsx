@@ -19,10 +19,7 @@ const tasks = [    {
 ]
 
   
-  
-  
-  
-function App() {
+  function App() {
     return(
         <div>
             <Header />
@@ -30,7 +27,10 @@ function App() {
            <main>
             {tasks.map(tasks =>{
                 return(
-                 <NewTask content={tasks.content}/>
+                 <NewTask 
+                 key={tasks.id}
+                 content={tasks.content}
+                 />
                 )
             })}
            </main>
