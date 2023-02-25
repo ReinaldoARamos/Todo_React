@@ -1,10 +1,25 @@
 import styles from "../componentes/Task.module.css"
 import ClipboardLogo from "../assets/Clipboard.svg"
+import { PlusCircle } from "phosphor-react"
 export function Task() {
     const counter = 0
     return(
         
+
+        
         <div>
+
+ <div className={styles.createTask}>
+      <input  className={styles.input} placeholder={"Adicione uma tarefa aqui"} />
+      <button  className={styles.button}>
+        
+        Criar
+        <PlusCircle />
+        </button>
+
+      </div>
+
+
           <div className={styles.AllTasks}>
             <span className={styles.Created}>
                 Tarefas Criadas

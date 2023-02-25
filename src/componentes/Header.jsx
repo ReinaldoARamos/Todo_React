@@ -17,15 +17,6 @@ export function Header({content}) {
       <header className={styles.header}>
         <img src={logo} className={styles.logo} />
       </header>
-      <div className={styles.createTask}>
-      <input onChange={consoleTeste} className={styles.input} placeholder={"Adicione uma tarefa aqui"} />
-      <button  className={styles.button}>
-        
-        Criar
-        <PlusCircle size={20}/>
-        </button>
-
-      </div>
      
     </div>
   );
