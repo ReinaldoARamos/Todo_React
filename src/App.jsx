@@ -4,15 +4,23 @@ import { Header } from './componentes/Header'
 import { NewTask } from './componentes/NewTask'
 
 
-
+const tasks = 
+    {
+      content: "Oi"
+      
+    }
+  
+  
+  
+  
 function App() {
     return(
         <div>
             <Header />
            <Task/>
-           <NewTask/>
-           <NewTask />
-           <NewTask />
+           <NewTask content={tasks.content}/>
+          
+          
 
         </div>
         
