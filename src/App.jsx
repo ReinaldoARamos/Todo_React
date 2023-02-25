@@ -4,11 +4,20 @@ import { Header } from './componentes/Header'
 import { NewTask } from './componentes/NewTask'
 
 
-const tasks = 
-    {
-      content: "Oi"
-      
-    }
+const tasks = [    {
+    id: 1,
+    content: "Oi"
+    
+  },
+  {
+    id: 2,
+    content: "Agathaaa"
+    
+  }
+  
+
+]
+
   
   
   
@@ -18,7 +27,14 @@ function App() {
         <div>
             <Header />
            <Task/>
-           <NewTask content={tasks.content}/>
+           <main>
+            {tasks.map(tasks =>{
+                return(
+                 <NewTask content={tasks.content}/>
+                )
+            })}
+           </main>
+           
           
           
 
