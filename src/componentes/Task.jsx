@@ -1,59 +1,66 @@
-import styles from "../componentes/Task.module.css"
-import ClipboardLogo from "../assets/Clipboard.svg"
-import { PlusCircle } from "phosphor-react"
-import { NewTask } from "./NewTask"
-import { tasks } from "./NewTask"
+import styles from "../componentes/Task.module.css";
+import ClipboardLogo from "../assets/Clipboard.svg";
+import { PlusCircle } from "phosphor-react";
+import { NewTask, tasks } from "./NewTask";
+import { useState } from "react";
 
 
-export function Task({content}) {
-    const counter = 0
-    return(
-        
 
-        
-        <div>
+export function Task({ content }) {
+   const counter = 0
 
- <div className={styles.createTask}>
-      <input  className={styles.input} placeholder={"Adicione uma tarefa aqui"} />
-      <button  className={styles.button}>
-        
-        Criar
-        <PlusCircle />
+   const [Task, setNewTask] = useState(["oi"]);
+   const [TaskContent, setTaskContent] = useState('')
+
+ function handleInputChange() {
+  setTaskContent(event.target.value)
+ }
+
+  function addNewTask() {
+    event.preventDefault()
+   const TaskContent = event.target.Task.value
+   setNewTask([...Task, TaskContent ])
+   setTaskContent("");
+}
+
+  return (
+    <div>
+      <div className={styles.createTask}>
+        <input
+          onChange={handleInputChange}
+          className={styles.input}
+          placeholder={"Adicione uma tarefa aqui"}
+          value={TaskContent}
+          
+        />
+        <button onSubmit={addNewTask} className={styles.button}>
+          Criar
+          <PlusCircle />
         </button>
-
       </div>
 
+      <div className={styles.AllTasks}>
+        <span className={styles.Created}>
+          Tarefas Criadas
+          <span className={styles.counter}>{counter}</span>
+        </span>
 
-          <div className={styles.AllTasks}>
-            <span className={styles.Created}>
-                Tarefas Criadas
-                <span className={styles.counter}>{counter}</span>
-                </span>
-              
-                <span className={styles.Concluded}>
-                Tarefas concluidas
-                <span className={styles.counter}> {counter}</span>
-                </span>
-              
-            </div>
-            <main>
-           
-         <footer className={styles.Line}></footer>
-            
-         {tasks.map(tasks =>{
-                return(
-                 <NewTask 
-                 key={tasks.id}
-                 content={tasks.content}
-                 />
-                )
-            })}
-           </main>
-           
-          
-        </div> 
-    ) 
+        <span className={styles.Concluded}>
+          Tarefas concluidas
+          <span className={styles.counter}> {counter}</span>
+        </span>
+      </div>
+      <main>
+        <footer className={styles.Line}></footer>
+
+        {tasks.map((Task) => {
+          return <NewTask key={Task.content} content={Task.content} />;
+        })}
+      </main>
+    </div>
+  );
 }
+
 /*
 <div className={styles.Clipboard}>
             <span>

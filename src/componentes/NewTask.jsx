@@ -5,15 +5,17 @@ import { consoleTeste, Header } from "./Header";
 import { Task } from "./Task";
   
 export const tasks = [    {
-  id: 1,
+
   content: "Oi"
   
 },
 {
-  id: 2,
+ 
   content: "Agathaaa"
   
 }
+ 
+
 
 
 ]
