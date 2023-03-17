@@ -1,8 +1,8 @@
-import styles from "../componentes/NewTask.module.css";
+import styles from "../TaskManager/NewTask.module.css";
 import { useState } from "react";
 import { Circle, Trash, PlusCircle} from "phosphor-react";
-import { consoleTeste, Header } from "./Header";
-import { Task } from "./Task";
+import { consoleTeste, Header } from "../Header/Header";
+import { Task } from "../Task";
   
 export const tasks = [    {
 

@@ -1,14 +1,15 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import {Task} from './componentes/Task'
-import { Header } from './componentes/Header'
-import { NewTask } from './componentes/NewTask'
+
+
+import { Header } from './componentes/Header/Header'
 
 
   
   function App() {
     return(
         <div>
-            <Header />  
+            <Header/>
            <Task/>
            
           

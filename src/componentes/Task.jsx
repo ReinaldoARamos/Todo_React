@@ -1,7 +1,7 @@
 import styles from "../componentes/Task.module.css";
 import ClipboardLogo from "../assets/Clipboard.svg";
 import { PlusCircle } from "phosphor-react";
-import { NewTask, tasks } from "./NewTask";
+import { NewTask, tasks } from "../componentes/TaskManager/NewTask";
 import { useState } from "react";
 
 

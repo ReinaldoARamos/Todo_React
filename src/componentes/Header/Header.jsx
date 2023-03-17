@@ -1,6 +1,6 @@
 import { PlusCircle} from "phosphor-react";
-import styles from "../componentes/Header.module.css";
-import logo from "../assets/Logo.svg";
+import styles from "../Header/Header.module.css";
+import logo from "../../assets/Logo.svg";
 
 export function consoleTeste() {
   
