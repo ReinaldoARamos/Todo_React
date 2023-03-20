@@ -17,15 +17,14 @@ export function Task() {
   function handleInputChange() {
     const TaskContent = event.target.value;
     setTaskContent(TaskContent)
-    console.log(TaskContent);
+    
   }
 
   function addNewTask() {
     event.preventDefault();
-    const Task = TaskContent
-    console.log(Task)
+   console.log(Task)
     setNewTask([...Task, TaskContent]);
-    // setTaskContent("");
+    setTaskContent("");
   }
 
   return (
@@ -35,7 +34,7 @@ export function Task() {
           onChange={handleInputChange}
           className={styles.input}
           placeholder={"Adicione uma tarefa aqui"}
-          value={TaskContent}
+         value={TaskContent}
         />
         <button onClick={addNewTask} className={styles.button}>
           Criar
@@ -57,8 +56,8 @@ export function Task() {
       <main>
         <footer className={styles.Line}></footer>
 
-        {Task.map((tasks) => {
-          return <NewTask content={TaskContent} />;
+        {Task.map((task) => {
+          return <NewTask content={Task} />;
         })}
       </main>
     </div>
