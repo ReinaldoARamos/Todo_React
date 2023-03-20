@@ -5,6 +5,7 @@ import styles from "../TaskManager/NewTask.module.css";
 interface tasks {
   key?: String;
   content: string;
+  iscomplete: boolean
 }
 
 export function NewTask({ content }: tasks) {
