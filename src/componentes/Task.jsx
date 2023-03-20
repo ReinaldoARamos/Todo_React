@@ -6,20 +6,12 @@ import { useState } from "react";
 
 
 
- const tasks = [    {
-  key: new Date(),
-  content: "Oi"
-  
-},
 
-
-
-]
 
 export function Task() {
   const counter = 0;
 
-  const [Task, setNewTask] = useState([tasks]);
+  const [Task, setNewTask] = useState([]);
   const [TaskContent, setTaskContent] = useState('');
 
   function handleInputChange() {
@@ -66,7 +58,7 @@ export function Task() {
         <footer className={styles.Line}></footer>
 
         {Task.map((tasks) => {
-          return <NewTask key={tasks.id} content={tasks.content} />;
+          return <NewTask content={TaskContent} />;
         })}
       </main>
     </div>
