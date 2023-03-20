@@ -70,14 +70,3 @@ export function Task() {
   );
 }
 
-/*
-<div className={styles.Clipboard}>
-            <span>
-                <img src={ClipboardLogo}/>
-                Você ainda não tem tarefas criadas
-            <p>Crie tarefas e organize</p>
-            </span>
-         
-
-          </div>
-*/
