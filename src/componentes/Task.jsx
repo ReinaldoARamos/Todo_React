@@ -1,28 +1,40 @@
 import styles from "../componentes/Task.module.css";
 import ClipboardLogo from "../assets/Clipboard.svg";
 import { PlusCircle } from "phosphor-react";
-import { NewTask, tasks } from "../componentes/TaskManager/NewTask";
+import { NewTask} from "../componentes/TaskManager/NewTask";
 import { useState } from "react";
 
 
 
-export function Task({ content }) {
-   const counter = 0
+ const tasks = [    {
 
-   const [Task, setNewTask] = useState(["oi"]);
-   const [TaskContent, setTaskContent] = useState([])
+  content: "Oi"
+  
+},
 
- function handleInputChange() {
-    const TaskContent = event.target.value
-    console.log(TaskContent)
- }
+
+
+]
+
+export function Task() {
+  const counter = 0;
+
+  const [Task, setNewTask] = useState([tasks]);
+  const [TaskContent, setTaskContent] = useState('');
+
+  function handleInputChange() {
+    const TaskContent = event.target.value;
+    setTaskContent(TaskContent)
+    console.log(TaskContent);
+  }
 
   function addNewTask() {
-    event.preventDefault()
-   const TaskContent = event.target.Task.value
-   setNewTask([...Task, TaskContent ])
-   setTaskContent("");
-}
+    event.preventDefault();
+    const Task = TaskContent
+    console.log(Task)
+    setNewTask([...Task, TaskContent]);
+    // setTaskContent("");
+  }
 
   return (
     <div>
@@ -31,10 +43,9 @@ export function Task({ content }) {
           onChange={handleInputChange}
           className={styles.input}
           placeholder={"Adicione uma tarefa aqui"}
-         value={TaskContent}
-          
+          //value={TaskContent}
         />
-        <button onSubmit={addNewTask} className={styles.button}>
+        <button onClick={addNewTask} className={styles.button}>
           Criar
           <PlusCircle />
         </button>

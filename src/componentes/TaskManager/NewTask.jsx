@@ -4,23 +4,10 @@ import { Circle, Trash, PlusCircle} from "phosphor-react";
 import { consoleTeste, Header } from "../Header/Header";
 import { Task } from "../Task";
   
-export const tasks = [    {
-
-  content: "Oi"
-  
-},
-{
- 
-  content: "Agathaaa"
-  
-}
- 
 
 
 
-]
-
-export function NewTask({id, content} ) {
+export function NewTask({content} ) {
  
  
   return (
