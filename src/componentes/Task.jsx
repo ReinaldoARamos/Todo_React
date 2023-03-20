@@ -11,17 +11,19 @@ import { useState } from "react";
 export function Task() {
   const counter = 0;
 
-  const [Task, setNewTask] = useState([]);
   const [TaskContent, setTaskContent] = useState('');
+  const [Task, setNewTask] = useState([]);
+
 
   function handleInputChange() {
-    const TaskContent = event.target.value;
-    setTaskContent(TaskContent)
+    const InputContent = event.target.value;
+    setTaskContent(InputContent)
     
   }
 
   function addNewTask() {
     event.preventDefault();
+    
    console.log(Task)
     setNewTask([...Task, TaskContent]);
     setTaskContent("");
@@ -34,7 +36,7 @@ export function Task() {
           onChange={handleInputChange}
           className={styles.input}
           placeholder={"Adicione uma tarefa aqui"}
-         value={TaskContent}
+        
         />
         <button onClick={addNewTask} className={styles.button}>
           Criar
@@ -56,8 +58,8 @@ export function Task() {
       <main>
         <footer className={styles.Line}></footer>
 
-        {Task.map((task) => {
-          return <NewTask content={Task} />;
+        {Task.map((item, index) => {
+          return <NewTask key={index} content={item} />;
         })}
       </main>
     </div>

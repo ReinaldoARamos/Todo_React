@@ -9,7 +9,7 @@ import React from "react";
 
 
 interface tasks  {
-  
+  key?: String,
   content: string
 }
 
