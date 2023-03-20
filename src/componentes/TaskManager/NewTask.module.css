@@ -44,14 +44,15 @@ transition: 0.2s;
 .Delete{
   
   display: flex;
-  align-items: flex-end;
+
   margin-bottom: 5px;
   background: transparent;
   color: var(--grey-300);
   border: none;  
   transition: 0.2s;
   cursor: pointer;
- margin-left: 38rem;
+
+
 }
 
 .Delete:hover{
