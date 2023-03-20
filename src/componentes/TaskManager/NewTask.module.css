@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  justify-content: flex-start;
+  align-items: center;
   background-color: aliceblue;
   width: 736px;
   height: 72px;
@@ -11,14 +11,14 @@
   flex: none;
   order: 0;
   text-decoration: none;
-
+  margin-left: 25rem;
   align-self: stretch;
   flex-grow: 0;
   align-items: center;
   padding-left: 15px;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  margin-left: 19.1rem;
+
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -43,13 +43,15 @@ transition: 0.2s;
 }
 .Delete{
   
-  margin-left: 100px;
+  display: flex;
+  align-items: flex-end;
   margin-bottom: 5px;
   background: transparent;
   color: var(--grey-300);
   border: none;  
   transition: 0.2s;
   cursor: pointer;
+ margin-left: 38rem;
 }
 
 .Delete:hover{

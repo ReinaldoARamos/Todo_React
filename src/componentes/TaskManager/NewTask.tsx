@@ -12,7 +12,7 @@ interface tasks {
 
 export function NewTask({ content }: tasks) {
   return (
-    <div>
+    <div className={styles.Taskdiv}>
       <div className={styles.Task}>
         <span>
           <Circle className={styles.circle} size={20} />
