@@ -1,9 +1,6 @@
-import styles from "../TaskManager/NewTask.module.css";
-import { useState } from "react";
 import { Circle, Trash, PlusCircle } from "phosphor-react";
-import { consoleTeste, Header } from "../Header/Header";
-import { Task } from "../Task";
 import React from "react";
+import styles from "../TaskManager/NewTask.module.css";
 
 interface tasks {
   key?: String;
@@ -19,8 +16,8 @@ export function NewTask({ content }: tasks) {
         </span>
         <span>{content}</span>
         <button className={styles.Delete}>
-          {" "}
-          <Trash size={20} />{" "}
+        <Trash size={20} />{" "}
+         
         </button>
       </div>
     </div>
