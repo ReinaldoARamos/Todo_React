@@ -14,7 +14,7 @@ export function Task() {
   const [TaskContent, setTaskContent] = useState('');
   const [Task, setNewTask] = useState([]);
 
-
+  
   function handleInputChange() {
     const InputContent = event.target.value;
     setTaskContent(InputContent)
@@ -26,19 +26,23 @@ export function Task() {
     
    console.log(Task)
     setNewTask([...Task, TaskContent]);
-    setTaskContent("");
+    setTaskContent(" ");
+
+  
   }
 
   return (
-    <div>
+    <div >
       <div className={styles.createTask}>
         <input
+          
           onChange={handleInputChange}
           className={styles.input}
           placeholder={"Adicione uma tarefa aqui"}
-        
+        value= {TaskContent}
+      required
         />
-        <button onClick={addNewTask} className={styles.button}>
+        <button  onClick={addNewTask} className={styles.button}  >
           Criar
           <PlusCircle />
         </button>
