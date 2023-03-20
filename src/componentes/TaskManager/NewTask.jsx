@@ -21,7 +21,7 @@ export function NewTask({content} ) {
         </span>
         <span>
           
-          {content}
+         {content}
 
         </span>
         <button  className={styles.Delete}>  </button>

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 
  const tasks = [    {
-
+  key: new Date(),
   content: "Oi"
   
 },
@@ -43,7 +43,7 @@ export function Task() {
           onChange={handleInputChange}
           className={styles.input}
           placeholder={"Adicione uma tarefa aqui"}
-          //value={TaskContent}
+          value={TaskContent}
         />
         <button onClick={addNewTask} className={styles.button}>
           Criar
@@ -65,8 +65,8 @@ export function Task() {
       <main>
         <footer className={styles.Line}></footer>
 
-        {tasks.map((Task) => {
-          return <NewTask key={Task.content} content={Task.content} />;
+        {Task.map((tasks) => {
+          return <NewTask key={tasks.id} content={tasks.content} />;
         })}
       </main>
     </div>
