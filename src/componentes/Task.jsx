@@ -10,10 +10,11 @@ export function Task({ content }) {
    const counter = 0
 
    const [Task, setNewTask] = useState(["oi"]);
-   const [TaskContent, setTaskContent] = useState('')
+   const [TaskContent, setTaskContent] = useState([])
 
  function handleInputChange() {
-  setTaskContent(event.target.value)
+    const TaskContent = event.target.value
+    console.log(TaskContent)
  }
 
   function addNewTask() {
@@ -30,7 +31,7 @@ export function Task({ content }) {
           onChange={handleInputChange}
           className={styles.input}
           placeholder={"Adicione uma tarefa aqui"}
-          value={TaskContent}
+         value={TaskContent}
           
         />
         <button onSubmit={addNewTask} className={styles.button}>
