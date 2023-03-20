@@ -26,7 +26,7 @@ export function Task() {
     
    console.log(Task)
     setNewTask([...Task, TaskContent]);
-    setTaskContent(" ");
+    setTaskContent('')
 
   
   }
@@ -42,7 +42,7 @@ export function Task() {
         value= {TaskContent}
       required
         />
-        <button  onClick={addNewTask} className={styles.button}  >
+        <button  onClick={addNewTask} className={styles.button} disabled={!TaskContent} >
           Criar
           <PlusCircle />
         </button>
