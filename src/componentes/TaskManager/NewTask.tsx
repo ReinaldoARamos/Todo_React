@@ -1,35 +1,27 @@
 import { Circle, Trash, PlusCircle, Check, CheckCircle } from "phosphor-react";
 import React from "react";
+import { Itask } from "../Task";
 
 import styles from "../TaskManager/NewTask.module.css";
 
-
-
-export interface tasks {
-  key?: number;
-  content: string;
-  iscomplete: boolean;
-  deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
-  //função é sem retorno, por isso void
+interface Props{
+  tasks: Itask,
+  onDelete: ( content: string )=> void 
 }
  
-export function NewTask({ content , deleteTask, iscomplete}: tasks) { //passando o Task deleteTask na prop
+export function NewTask({tasks, onDelete}: Props) { //passando o Task deleteTask na prop
 
-  function HandleDelete() {
-    deleteTask(content) //pegando a função handle Delete e passando o content como parametro
-  }
  
-
-  return (
+ return (
     <div className={styles.Taskdiv}>
       <div className={styles.Task}>
         <span>
           <Circle className={styles.circle} size={20}/>
          
         </span>
-        <span>{content} </span>
+        <span>{tasks.content} </span>
         <button className={styles.Delete}>
-        <Trash size={20}  onClick={HandleDelete}/>
+        <Trash size={20}  onClick={onDelete}/>
          
         </button>
       </div>

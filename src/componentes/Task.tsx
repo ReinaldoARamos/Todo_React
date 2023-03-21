@@ -5,32 +5,47 @@ import { NewTask} from "./TaskManager/NewTask";
 import { useState } from "react";
 import React from "react";
 
-inter
+
+
+export interface Itask {
+  key?: string;
+  content: string;
+  iscomplete: boolean;
+ // deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
+  //função é sem retorno, por isso void
+}
 
 export function Task() {
 
 
   const [TaskContent, setTaskContent] = useState("");
-  const [Task, setNewTask] = useState([]);
+  const [Task, setNewTask] = useState<Itask[]>([{
+    key: "1", 
+    content: "Teste",
+    iscomplete: true
+    
+  }]);
   const counter = Task.length;
   const counteComplete = Task.filter((task) => {task.iscomplete})
+
   function handleInputChange() {
     const InputContent = event.target.value;
+    
     setTaskContent(InputContent);
   }
 
 
   function addNewTask() {
-    event.preventDefault();
+    /*
     const Clip = document.getElementById('dori')
     Clip.style.display = "none"
-
+*/
     setNewTask([...Task, TaskContent]);
     
     setTaskContent("");
 
   }
-  function deleteTask(taskToDelete) { //deleteTask recebe TasktoDelete(concent)
+  function deleteTask(taskToDelete : String) { //deleteTask recebe TasktoDelete(concent)
     const taskWithoutDeleteOne = Task.filter(content=>{  //faz um filter na lista(ja que é um array )
       return content != taskToDelete  //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
     })
@@ -43,9 +58,7 @@ export function Task() {
     }
   }
 
-function completeTask() {
-  
-}
+
 
 
   return (
@@ -92,8 +105,8 @@ function completeTask() {
     
         <footer  className={styles.Line}></footer>
 
-        {Task.map((item, index, status) => {
-          return <NewTask key={index} content={item} deleteTask={deleteTask} iscomplete={true} />; 
+        {Task.map((task) => {
+          return <NewTask key={task} tasks={task} />; 
           //aqui no deleteTask no return passei o deleteTaswk como o deleteTask que irei definidir nesse componente
         })}
       </main>
