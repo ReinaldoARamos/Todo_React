@@ -76,7 +76,7 @@ export function Task() {
         <footer  className={styles.Line}></footer>
 
         {Task.map((item, index) => {
-          return <NewTask key={index} content={item} deleteTask />;
+          return <NewTask key={index} content={item} deleteTask={deleteTask} />;
         })}
       </main>
     </div>

@@ -6,14 +6,16 @@ interface tasks {
   key?: String;
   content: string;
   iscomplete: boolean;
-  deleteTask( content: string ) => void
+  deleteTask: ( content: string )=> void
 }
 
-function HandleDelete() {
-  deleteTask(content)
-}
 
 export function NewTask({ content , deleteTask}: tasks) {
+
+  function HandleDelete() {
+    deleteTask(content)
+  }
+  
   return (
     <div className={styles.Taskdiv}>
       <div className={styles.Task}>
