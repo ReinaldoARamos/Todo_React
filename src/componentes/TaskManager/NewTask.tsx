@@ -5,19 +5,24 @@ import styles from "../TaskManager/NewTask.module.css";
 interface tasks {
   key?: String;
   content: string;
-  iscomplete: boolean
+  iscomplete: boolean;
+  deleteTask( content: string ) => void
 }
 
-export function NewTask({ content }: tasks) {
+function HandleDelete() {
+  deleteTask(content)
+}
+
+export function NewTask({ content , deleteTask}: tasks) {
   return (
     <div className={styles.Taskdiv}>
       <div className={styles.Task}>
         <span>
-          <Circle className={styles.circle} size={20} />
+          <Circle className={styles.circle} size={20}/>
         </span>
         <span>{content}</span>
         <button className={styles.Delete}>
-        <Trash size={20} />{" "}
+        <Trash size={20}  onClick={HandleDelete}/>
          
         </button>
       </div>

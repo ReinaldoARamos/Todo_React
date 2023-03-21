@@ -24,6 +24,9 @@ export function Task() {
     setTaskContent("");
 
   }
+  function deleteTask(taskToDelete) {
+    
+  }
 
 
 
@@ -73,7 +76,7 @@ export function Task() {
         <footer  className={styles.Line}></footer>
 
         {Task.map((item, index) => {
-          return <NewTask key={index} content={item} />;
+          return <NewTask key={index} content={item} deleteTask />;
         })}
       </main>
     </div>
