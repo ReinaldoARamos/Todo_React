@@ -1,48 +1,49 @@
 import styles from "../componentes/Task.module.css";
 import ClipboardLogo from "../assets/Clipboard.svg";
 import { PlusCircle } from "phosphor-react";
-import { NewTask} from "../componentes/TaskManager/NewTask";
+import { NewTask } from "../componentes/TaskManager/NewTask";
 import { useState } from "react";
-
-
-
-
 
 export function Task() {
   const counter = 0;
 
-  const [TaskContent, setTaskContent] = useState('');
+  const [TaskContent, setTaskContent] = useState("");
   const [Task, setNewTask] = useState([]);
 
-  
   function handleInputChange() {
     const InputContent = event.target.value;
-    setTaskContent(InputContent)
-    
+    setTaskContent(InputContent);
   }
 
   function addNewTask() {
     event.preventDefault();
-    
-   console.log(Task)
+    const Clip = document.getElementById('dori')
+    Clip.style.display = "none"
+    console.log(Task, Clip);
     setNewTask([...Task, TaskContent]);
-    setTaskContent('')
+    setTaskContent("");
 
-  
   }
 
+
+
+
   return (
-    <div >
+    <div>
       <div className={styles.createTask}>
         <input
-          
           onChange={handleInputChange}
           className={styles.input}
           placeholder={"Adicione uma tarefa aqui"}
-        value= {TaskContent}
-      required
+          value={TaskContent}
+          required
         />
-        <button  onClick={addNewTask} className={styles.button} disabled={!TaskContent} >
+
+        <button
+          onClick={addNewTask}
+          className={styles.button}
+          disabled={!TaskContent}
+        >
           Criar
           <PlusCircle />
         </button>
@@ -60,8 +61,17 @@ export function Task() {
         </span>
       </div>
       <main>
-        <footer className={styles.Line}></footer>
         
+      <div   className={styles.Clipboard} id='dori'>
+        <span>
+          <img src={ClipboardLogo} />
+          Você ainda não tem tarefas criadas
+          <p>Crie tarefas e organize</p>
+        </span>
+      </div>
+    
+        <footer  className={styles.Line}></footer>
+
         {Task.map((item, index) => {
           return <NewTask key={index} content={item} />;
         })}
@@ -69,4 +79,3 @@ export function Task() {
     </div>
   );
 }
-

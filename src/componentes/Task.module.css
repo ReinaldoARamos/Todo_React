@@ -64,6 +64,7 @@
  height: 287px;
  left: calc(50% - 736px/2);
  top: 291px;
+
 }
 
 .Clipboard span{
@@ -79,12 +80,20 @@
     padding-top: 80px;
     color: rgba(128, 128, 128, 1);
     font-size: 20px;
+    
+    
 }
 .Clipboard img{
     margin-bottom: 15px;
 }
 .Clipboard p{
     color: var(--grey-100);
+}
+
+.Clipboard:disabled{
+ 
+background-color: #1E6F9F;
+
 }
 
 
