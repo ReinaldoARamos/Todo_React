@@ -1,11 +1,12 @@
 import { Circle, Trash, PlusCircle, Check, CheckCircle } from "phosphor-react";
 import React from "react";
+
 import styles from "../TaskManager/NewTask.module.css";
 
 
 
 export interface tasks {
-  key?: String;
+  key?: number;
   content: string;
   iscomplete: boolean;
   deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
