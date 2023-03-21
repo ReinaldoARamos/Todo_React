@@ -22,7 +22,7 @@ export function Task() {
     Clip.style.display = "none"
 
     setNewTask([...Task, TaskContent]);
-    console.log(Task.length);
+    
     setTaskContent("");
 
   }
@@ -30,15 +30,18 @@ export function Task() {
     const taskWithoutDeleteOne = Task.filter(content=>{  //faz um filter na lista(ja que é um array )
       return content != taskToDelete  //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
     })
-    console.log(Task.length)
+
     setNewTask(taskWithoutDeleteOne) //seta o estado
     if(Task.length <= 1){
       const Clip = document.getElementById('dori')
       Clip.style.display = "flex"
+      
     }
   }
 
-
+function completeTask() {
+  
+}
 
 
   return (
@@ -85,8 +88,8 @@ export function Task() {
     
         <footer  className={styles.Line}></footer>
 
-        {Task.map((item, index) => {
-          return <NewTask key={index} content={item} deleteTask={deleteTask} />; 
+        {Task.map((item, index, status) => {
+          return <NewTask key={index} content={item} deleteTask={deleteTask} iscomplete />; 
           //aqui no deleteTask no return passei o deleteTaswk como o deleteTask que irei definidir nesse componente
         })}
       </main>

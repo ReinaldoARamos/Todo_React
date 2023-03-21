@@ -41,7 +41,8 @@ transition: 0.2s;
 
 .circle:hover{
   color: #5E60CE;
-}
+} 
+
 .Delete{
   
   display: flex;
@@ -59,5 +60,12 @@ transition: 0.2s;
   color: #F75A68
 }
 
-
+.circleDone{
+  color: #1e6f9f;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+transition: 0.2s;
+}
 
