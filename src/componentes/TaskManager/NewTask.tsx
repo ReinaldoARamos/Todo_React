@@ -6,14 +6,15 @@ interface tasks {
   key?: String;
   content: string;
   iscomplete: boolean;
-  deleteTask: ( content: string )=> void
+  deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
+  //função é sem retorno, por isso void
 }
 
 
-export function NewTask({ content , deleteTask}: tasks) {
+export function NewTask({ content , deleteTask}: tasks) { //passando o Task deleteTask na prop
 
   function HandleDelete() {
-    deleteTask(content)
+    deleteTask(content) //pegando a função handle Delete e passando o content como parametro
   }
   
   return (

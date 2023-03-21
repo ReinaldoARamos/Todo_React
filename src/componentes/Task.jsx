@@ -24,8 +24,12 @@ export function Task() {
     setTaskContent("");
 
   }
-  function deleteTask(taskToDelete) {
-    
+  function deleteTask(taskToDelete) { //deleteTask recebe TasktoDelete(concent)
+    const taskWithoutDeleteOne = Task.filter(content=>{  //faz um filter na lista(ja que é um array )
+      return content != taskToDelete  //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
+    })
+
+    setNewTask(taskWithoutDeleteOne) //seta o estado
   }
 
 
@@ -76,7 +80,8 @@ export function Task() {
         <footer  className={styles.Line}></footer>
 
         {Task.map((item, index) => {
-          return <NewTask key={index} content={item} deleteTask={deleteTask} />;
+          return <NewTask key={index} content={item} deleteTask={deleteTask} />; 
+          //aqui no deleteTask no return passei o deleteTaswk como o deleteTask que irei definidir nesse componente
         })}
       </main>
     </div>
