@@ -1,67 +1,57 @@
 import styles from "../componentes/Task.module.css";
 import ClipboardLogo from "../assets/Clipboard.svg";
 import { PlusCircle } from "phosphor-react";
-import { NewTask} from "./TaskManager/NewTask";
+import { NewTask } from "./TaskManager/NewTask";
 import { useState } from "react";
 import React from "react";
-
-
 
 export interface Itask {
   key?: string;
   content: string;
   iscomplete: boolean;
- // deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
+  // deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
   //função é sem retorno, por isso void
 }
 
 export function Task() {
-
-
   const [TaskContent, setTaskContent] = useState("");
-  const [Task, setNewTask] = useState<Itask[]>([{
-    key: "1", 
-    content: "Teste",
-    iscomplete: true
-    
-  }]);
+  const [Task, setNewTask] = useState<Itask[]>([]);
   const counter = Task.length;
-  const counteComplete = Task.filter((task) => {task.iscomplete})
+  const counteComplete = Task.filter((task) => {
+    task.iscomplete;
+  });
 
   function handleInputChange() {
     const InputContent = event.target.value;
-    
     setTaskContent(InputContent);
   }
 
-
   function addNewTask() {
-
-    setNewTask([...Task, 
+    setNewTask([
+      ...Task,
       {
-      content: TaskContent,
-      iscomplete: true
-    }
-  ]);
-    
-    setTaskContent("");
-
-  }
-  function deleteTask(taskToDelete : String) { //deleteTask recebe TasktoDelete(concent)
-    const taskWithoutDeleteOne = Task.filter(content=>{  //faz um filter na lista(ja que é um array )
-      return content != taskToDelete  //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
-    })
-
-    setNewTask(taskWithoutDeleteOne) //seta o estado
-    if(Task.length <= 1){
-      const Clip = document.getElementById('dori')
-      Clip.style.display = "flex"
       
+        content: TaskContent,
+        iscomplete: true,
+      },
+    ]);
+
+    setTaskContent('');
+    console.log(Task);
+  }
+  function deleteTask(taskToDelete: String) {
+    //deleteTask recebe TasktoDelete(concent)
+    const taskWithoutDeleteOne = Task.filter((content) => {
+      //faz um filter na lista(ja que é um array )
+      return content != taskToDelete; //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
+    });
+
+    setNewTask(taskWithoutDeleteOne); //seta o estado
+    if (Task.length <= 1) {
+      const Clip = document.getElementById("dori");
+      Clip.style.display = "flex";
     }
   }
-
-
-
 
   return (
     <div>
@@ -96,19 +86,18 @@ export function Task() {
         </span>
       </div>
       <main>
-        
-      <div   className={styles.Clipboard} id='dori'>
-        <span>
-          <img src={ClipboardLogo} />
-          Você ainda não tem tarefas criadas
-          <p>Crie tarefas e organize</p>
-        </span>
-      </div>
-    
-        <footer  className={styles.Line}></footer>
+        <div className={styles.Clipboard} id="dori">
+          <span>
+            <img src={ClipboardLogo} />
+            Você ainda não tem tarefas criadas
+            <p>Crie tarefas e organize</p>
+          </span>
+        </div>
+
+        <footer className={styles.Line}></footer>
 
         {Task.map((task) => {
-          return <NewTask key={task} tasks={task} />; 
+          return <NewTask  tasks={task} />;
           //aqui no deleteTask no return passei o deleteTaswk como o deleteTask que irei definidir nesse componente
         })}
       </main>
