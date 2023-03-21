@@ -70,7 +70,7 @@ export function Task() {
 
         <span className={styles.Concluded}>
           Tarefas concluidas
-          <span className={styles.counter}>0 de {counter}</span>
+          <span className={styles.done}>0 de {counter}</span>
         </span>
       </div>
       <main>
