@@ -5,15 +5,8 @@ import { NewTask} from "./TaskManager/NewTask";
 import { useState } from "react";
 import React from "react";
 
-export interface tasks {
-  key?: String;
-  content: string;
-  iscomplete: boolean;
-  deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
-  //função é sem retorno, por isso void
-}
 
-export function Task({task} : Props) {
+export function Task() {
 
 
   const [TaskContent, setTaskContent] = useState("");
