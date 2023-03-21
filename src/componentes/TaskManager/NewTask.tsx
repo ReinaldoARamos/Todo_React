@@ -6,10 +6,10 @@ import styles from "../TaskManager/NewTask.module.css";
 
 interface Props{
   tasks: Itask,
-  onDelete: ( content: string )=> void 
+ 
 }
  
-export function NewTask({tasks, onDelete}: Props) { //passando o Task deleteTask na prop
+export function NewTask({tasks}: Props) { //passando o Task deleteTask na prop
 
  
  return (
@@ -21,7 +21,7 @@ export function NewTask({tasks, onDelete}: Props) { //passando o Task deleteTask
         </span>
         <span>{tasks.content} </span>
         <button className={styles.Delete}>
-        <Trash size={20}  onClick={onDelete}/>
+        <Trash size={20} onClick={tasks.deleteTask}/>
          
         </button>
       </div>

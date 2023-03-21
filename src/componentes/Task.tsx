@@ -9,8 +9,8 @@ export interface Itask {
   key?: string;
   content: string;
   iscomplete: boolean;
-  // deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
-  //função é sem retorno, por isso void
+  deleteTask: ( TaskContent: string )=> void //passando a função como propriedade com o content em formato string
+
 }
 
 export function Task() {
@@ -30,20 +30,20 @@ export function Task() {
     setNewTask([
       ...Task,
       {
-      
-        content: TaskContent,
+       content: TaskContent,
         iscomplete: true,
+        deleteTask
       },
     ]);
 
     setTaskContent('');
     console.log(Task);
   }
-  function deleteTask(taskToDelete: String) {
+  function deleteTask(TaskContent: String) {
     //deleteTask recebe TasktoDelete(concent)
-    const taskWithoutDeleteOne = Task.filter((content) => {
+    const taskWithoutDeleteOne = Task.filter((Task) => {
       //faz um filter na lista(ja que é um array )
-      return content != taskToDelete; //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
+      return TaskContent != Task.content; //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
     });
 
     setNewTask(taskWithoutDeleteOne); //seta o estado
