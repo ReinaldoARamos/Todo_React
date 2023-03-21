@@ -36,11 +36,13 @@ export function Task() {
 
 
   function addNewTask() {
-    /*
-    const Clip = document.getElementById('dori')
-    Clip.style.display = "none"
-*/
-    setNewTask([...Task, TaskContent]);
+
+    setNewTask([...Task, 
+      {
+      content: TaskContent,
+      iscomplete: true
+    }
+  ]);
     
     setTaskContent("");
 
