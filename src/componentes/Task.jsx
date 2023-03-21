@@ -19,8 +19,9 @@ export function Task() {
     event.preventDefault();
     const Clip = document.getElementById('dori')
     Clip.style.display = "none"
-    console.log(Task, Clip);
+
     setNewTask([...Task, TaskContent]);
+    console.log(Task.length);
     setTaskContent("");
 
   }
@@ -28,11 +29,11 @@ export function Task() {
     const taskWithoutDeleteOne = Task.filter(content=>{  //faz um filter na lista(ja que é um array )
       return content != taskToDelete  //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
     })
-    
+    console.log(Task.length)
     setNewTask(taskWithoutDeleteOne) //seta o estado
-    if(Task.length > 0){
+    if(Task.length <= 1){
       const Clip = document.getElementById('dori')
-    Clip.style.display = "flex"
+      Clip.style.display = "flex"
     }
   }
 
