@@ -11,13 +11,13 @@ interface  Props {
 }
 
 
-export function Task() {
+export function Task({task} : Props) {
 
 
   const [TaskContent, setTaskContent] = useState("");
   const [Task, setNewTask] = useState([]);
   const counter = Task.length;
-  const counteComplete = Task.filter((task) => {task.iscomplete})
+  //const counteComplete = Task.filter((task) => {task.iscomplete})
   function handleInputChange() {
     const InputContent = event.target.value;
     setTaskContent(InputContent);

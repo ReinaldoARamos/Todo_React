@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../TaskManager/NewTask.module.css";
 
 export interface tasks {
-  key?: Date;
+  key?: number;
   content: string;
   iscomplete: boolean;
   deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
@@ -11,7 +11,7 @@ export interface tasks {
 }
 
 
-export function NewTask({ content , deleteTask}: tasks) { //passando o Task deleteTask na prop
+export function NewTask({ content , deleteTask, iscomplete}: tasks) { //passando o Task deleteTask na prop
 
   function HandleDelete() {
     deleteTask(content) //pegando a função handle Delete e passando o content como parametro
@@ -25,7 +25,7 @@ export function NewTask({ content , deleteTask}: tasks) { //passando o Task dele
           <Circle className={styles.circle} size={20}/>
          
         </span>
-        <span>{content}</span>
+        <span>{content} </span>
         <button className={styles.Delete}>
         <Trash size={20}  onClick={HandleDelete}/>
          
