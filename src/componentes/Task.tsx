@@ -17,9 +17,9 @@ export function Task() {
   const [TaskContent, setTaskContent] = useState("");
   const [Task, setNewTask] = useState<Itask[]>([]);
   const counter = Task.length;
-  const counteComplete = Task.filter((task) => {
-    task.iscomplete;
-  });
+  const counteComplete = Task.filter((Task) => {
+    Task.iscomplete;
+  }).length;
 
   function handleInputChange() {
     const InputContent = event.target.value;
@@ -43,7 +43,7 @@ export function Task() {
     //deleteTask recebe TasktoDelete(concent)
     const taskWithoutDeleteOne = Task.filter((Task) => {
       //faz um filter na lista(ja que é um array )
-      return TaskContent != Task.content; //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
+      return Task.content != TaskContent; //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
     });
 
     setNewTask(taskWithoutDeleteOne); //seta o estado
@@ -82,7 +82,7 @@ export function Task() {
 
         <span className={styles.Concluded}>
           Tarefas concluidas
-          <span className={styles.done}>0 de {counter}</span>
+          <span className={styles.done}>{counteComplete} de {counter}</span>
         </span>
       </div>
       <main>
