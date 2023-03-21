@@ -1,8 +1,15 @@
 import styles from "../componentes/Task.module.css";
 import ClipboardLogo from "../assets/Clipboard.svg";
 import { PlusCircle } from "phosphor-react";
-import { NewTask } from "../componentes/TaskManager/NewTask";
+import { NewTask, tasks } from "./TaskManager/NewTask";
 import { useState } from "react";
+import React from "react";
+
+
+interface  Props {
+  task: tasks
+}
+
 
 export function Task() {
 
@@ -10,6 +17,7 @@ export function Task() {
   const [TaskContent, setTaskContent] = useState("");
   const [Task, setNewTask] = useState([]);
   const counter = Task.length;
+  const counteComplete = Task.filter((task) => {task.iscomplete})
   function handleInputChange() {
     const InputContent = event.target.value;
     setTaskContent(InputContent);
@@ -89,7 +97,7 @@ function completeTask() {
         <footer  className={styles.Line}></footer>
 
         {Task.map((item, index, status) => {
-          return <NewTask key={index} content={item} deleteTask={deleteTask} iscomplete />; 
+          return <NewTask key={index} content={item} deleteTask={deleteTask} iscomplete={true} />; 
           //aqui no deleteTask no return passei o deleteTaswk como o deleteTask que irei definidir nesse componente
         })}
       </main>
