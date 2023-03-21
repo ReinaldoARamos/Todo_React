@@ -28,8 +28,12 @@ export function Task() {
     const taskWithoutDeleteOne = Task.filter(content=>{  //faz um filter na lista(ja que é um array )
       return content != taskToDelete  //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
     })
-
+    
     setNewTask(taskWithoutDeleteOne) //seta o estado
+    if(Task.length > 0){
+      const Clip = document.getElementById('dori')
+    Clip.style.display = "flex"
+    }
   }
 
 
