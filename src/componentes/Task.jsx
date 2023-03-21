@@ -5,15 +5,16 @@ import { NewTask } from "../componentes/TaskManager/NewTask";
 import { useState } from "react";
 
 export function Task() {
-  const counter = 0;
+
 
   const [TaskContent, setTaskContent] = useState("");
   const [Task, setNewTask] = useState([]);
-
+  const counter = Task.length;
   function handleInputChange() {
     const InputContent = event.target.value;
     setTaskContent(InputContent);
   }
+
 
   function addNewTask() {
     event.preventDefault();
@@ -69,7 +70,7 @@ export function Task() {
 
         <span className={styles.Concluded}>
           Tarefas concluidas
-          <span className={styles.counter}> {counter}</span>
+          <span className={styles.counter}>0 de 0</span>
         </span>
       </div>
       <main>
