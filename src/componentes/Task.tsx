@@ -1,15 +1,17 @@
 import styles from "../componentes/Task.module.css";
 import ClipboardLogo from "../assets/Clipboard.svg";
 import { PlusCircle } from "phosphor-react";
-import { NewTask, tasks } from "./TaskManager/NewTask";
+import { NewTask} from "./TaskManager/NewTask";
 import { useState } from "react";
 import React from "react";
 
-
-interface  Props {
-  task: tasks
+export interface tasks {
+  key?: String;
+  content: string;
+  iscomplete: boolean;
+  deleteTask: ( content: string )=> void //passando a função como propriedade com o content em formato string
+  //função é sem retorno, por isso void
 }
-
 
 export function Task({task} : Props) {
 
@@ -17,7 +19,7 @@ export function Task({task} : Props) {
   const [TaskContent, setTaskContent] = useState("");
   const [Task, setNewTask] = useState([]);
   const counter = Task.length;
-  //const counteComplete = Task.filter((task) => {task.iscomplete})
+  const counteComplete = Task.filter((task) => {task.iscomplete})
   function handleInputChange() {
     const InputContent = event.target.value;
     setTaskContent(InputContent);
