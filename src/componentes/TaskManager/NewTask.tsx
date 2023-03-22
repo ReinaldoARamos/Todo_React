@@ -6,21 +6,21 @@ import styles from "../TaskManager/NewTask.module.css";
 
 interface Props{
   tasks: Itask,
-  onDelete: (id: String) => void
+  onDelete: (id: String) => void,
+  onToogle:(id: String) => void
 }
  
-export function NewTask({tasks, onDelete}: Props) { //passando o Task deleteTask na prop
-let iscomplete = false;
- 
+export function NewTask({tasks, onDelete, onToogle}: Props) { //passando o Task deleteTask na prop
+
 
  return (
     <div className={styles.Taskdiv}>
       <div className={styles.Task}>
 
         
-        <span >
+        <span onClick={() => onToogle(tasks.key)}>
 
-         {iscomplete  ? <CheckCircle size={20} className={styles.CicleDone} /> : 
+         {tasks.iscomplete  ? <CheckCircle size={20} className={styles.CicleDone} /> : 
           <Circle className={styles.circle} size={20}/>}
 
         </span >

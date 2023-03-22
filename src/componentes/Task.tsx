@@ -16,6 +16,7 @@ export interface Itask {
 
 }
 
+
 export function Task() {
   const [TaskContent, setTaskContent] = useState("");
   const [Task, setNewTask] = useState<Itask[]>([]);
@@ -25,6 +26,18 @@ export function Task() {
   function handleInputChange() {
     const InputContent = event.target.value;
     setTaskContent(InputContent);
+  }
+
+  function toogleTaskCompleteById(taskId : string) {
+    const newTask = Task.map((task)=>{
+      if (task.key === taskId) {
+       return {...Task,
+        iscomplete: !task.iscomplete } 
+      }else {
+        return task
+      }
+    })
+    setNewTask(newTask)
   }
 
   function addNewTask() {
@@ -110,7 +123,7 @@ export function Task() {
         <footer className={styles.Line}></footer>
 
         {Task.map((task) => {
-          return <NewTask  tasks={task}  onDelete={deleteTask}  />;
+          return <NewTask  tasks={task}  onDelete={deleteTask}  onToogle={toogleTaskCompleteById}/>;
           })}
       </main>
     </div>
