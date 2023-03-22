@@ -56,7 +56,7 @@ export function Task() {
     setNewTask(taskWithoutDeleteOne); 
 
       console.log(Task.length)
-      if (Task.length >= 0) {
+      if (Task.length <= 1) {
         const Clip = document.getElementById("dori");
         Clip.style.display = "flex";
       } 
