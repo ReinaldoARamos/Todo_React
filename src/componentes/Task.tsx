@@ -5,11 +5,14 @@ import { NewTask } from "./TaskManager/NewTask";
 import { useState } from "react";
 import React from "react";
 
+
+
+
 export interface Itask {
-  key?: String;
+  key?: string;
   content: string;
   iscomplete: boolean;
-  deleteTask: ( TaskId: string )=> void //passando a função como propriedade com o content em formato string
+  //deleteTask: ( TaskId: string )=> void //passando a função como propriedade com o content em formato string
 
 }
 
@@ -30,26 +33,38 @@ export function Task() {
       {
         key: crypto.randomUUID(),
        content: TaskContent,
-        iscomplete: true,
-        deleteTask
+        iscomplete: false,
+ 
       },
-    ]);
-
+    ]
+    
+    );
+    console.log(Task.length)
+    if (Task.length >= 0) {
+      const Clip = document.getElementById("dori");
+      Clip.style.display = "none";
+    } 
     setTaskContent('');
+    
     
   }
   function deleteTask(TaskId: String) {
     const taskWithoutDeleteOne = Task.filter((Task)=> {
+      
       return Task.key != TaskId}) 
-    //console.log(taskWithoutDeleteOne)
-    setNewTask(taskWithoutDeleteOne); //seta o estado
 
-    /*
-    if (Task.length <= 1) {
-      const Clip = document.getElementById("dori");
-      Clip.style.display = "flex";
-    }*/
+    setNewTask(taskWithoutDeleteOne); 
+
+      console.log(Task.length)
+      if (Task.length >= 0) {
+        const Clip = document.getElementById("dori");
+        Clip.style.display = "flex";
+      } 
   }
+
+    
+
+  
 
   return (
     <div>
@@ -95,9 +110,8 @@ export function Task() {
         <footer className={styles.Line}></footer>
 
         {Task.map((task) => {
-          return <NewTask  tasks={task}    />;
-          //aqui no deleteTask no return passei o deleteTaswk como o deleteTask que irei definidir nesse componente
-        })}
+          return <NewTask  tasks={task}  onDelete={deleteTask}  />;
+          })}
       </main>
     </div>
   );
