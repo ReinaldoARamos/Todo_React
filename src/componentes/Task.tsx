@@ -6,7 +6,7 @@ import { HtmlHTMLAttributes, useState } from "react";
 import React from "react";
 
 
-
+const localStorage_key = "todo:savedTask"
 
 export interface Itask {
   key?: string;
@@ -23,6 +23,11 @@ export function Task() {
   const counter = Task.length;
   const counteComplete = Task.filter((tasks) => tasks.iscomplete).length
 
+  function setTasksSave(newTask : Itask[]) {
+    setNewTask(newTask)
+    localStorage.setItem(localStorage_key, JSON.stringify(setTasksSave) )
+  }
+ 
   function handleInputChange() {
     const InputContent = event.target.value;
     setTaskContent(InputContent);
