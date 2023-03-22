@@ -2,7 +2,7 @@ import styles from "../componentes/Task.module.css";
 import ClipboardLogo from "../assets/Clipboard.svg";
 import { PlusCircle } from "phosphor-react";
 import { NewTask } from "./TaskManager/NewTask";
-import { useState } from "react";
+import { HtmlHTMLAttributes, useState } from "react";
 import React from "react";
 
 
@@ -41,7 +41,7 @@ export function Task() {
     );
     console.log(Task.length)
     if (Task.length >= 0) {
-      const Clip = document.getElementById("dori");
+      const Clip : any = document.getElementById("dori");
       Clip.style.display = "none";
     } 
     setTaskContent('');
