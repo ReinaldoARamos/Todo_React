@@ -9,17 +9,21 @@ export interface Itask {
   key?: string;
   content: string;
   iscomplete: boolean;
-  deleteTask: ( TaskContent: string )=> void //passando a função como propriedade com o content em formato string
+  deleteTask?: ( TaskContent: string )=> void //passando a função como propriedade com o content em formato string
 
 }
 
 export function Task() {
   const [TaskContent, setTaskContent] = useState("");
-  const [Task, setNewTask] = useState<Itask[]>([]);
+  const [Task, setNewTask] = useState<Itask[]>([{
+    key:"1",
+    content:"Teste" ,
+    iscomplete:true
+  }]);
+  const counterComplete = Task.filter(tasks => tasks.iscomplete).length
   const counter = Task.length;
-  const counteComplete = Task.filter((Task) => {
-    Task.iscomplete;
-  }).length;
+  
+  
 
   function handleInputChange() {
     const InputContent = event.target.value;
@@ -82,7 +86,7 @@ export function Task() {
 
         <span className={styles.Concluded}>
           Tarefas concluidas
-          <span className={styles.done}>{counteComplete} de {counter}</span>
+          <span className={styles.done}>{counterComplete} de {counter}</span>
         </span>
       </div>
       <main>
