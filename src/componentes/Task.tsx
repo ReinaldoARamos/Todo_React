@@ -19,7 +19,14 @@ export function Task() {
     key:"1",
     content:"Teste" ,
     iscomplete:true
-  }]);
+  }
+  ,
+  {
+    key:"2",
+    content:"Teste2" ,
+    iscomplete:false
+  }
+]);
   const counterComplete = Task.filter(tasks => tasks.iscomplete).length
   const counter = Task.length;
   
