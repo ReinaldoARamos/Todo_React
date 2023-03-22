@@ -41,6 +41,7 @@ export function Task() {
     setNewTask([
       ...Task,
       {
+        key: crypto.randomUUID(),
        content: TaskContent,
         iscomplete: true,
         deleteTask
