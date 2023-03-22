@@ -71,3 +71,7 @@ transition: 0.2s;
   flex-direction: row;
   transition: 0.2
 }
+
+.CicleDone:hover{
+  color: #1e6f9f;
+} 

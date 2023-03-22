@@ -28,17 +28,6 @@ export function Task() {
     setTaskContent(InputContent);
   }
 
-  function toogleTaskCompleteById(taskId : string) {
-    const newTask = Task.map((task)=>{
-      if (task.key === taskId) {
-       return {...Task,
-        iscomplete: !task.iscomplete } 
-      }else {
-        return task
-      }
-    })
-    setNewTask(newTask)
-  }
 
   function addNewTask() {
     setNewTask([
@@ -61,20 +50,40 @@ export function Task() {
     
     
   }
+
+
+
   function deleteTask(TaskId: String) {
     const taskWithoutDeleteOne = Task.filter((Task)=> {
       
-      return Task.key != TaskId}) 
+      return Task.key != TaskId
+    
+    }) 
 
     setNewTask(taskWithoutDeleteOne); 
 
-      console.log(Task.length)
       if (Task.length <= 1) {
         const Clip = document.getElementById("dori");
         Clip.style.display = "flex";
       } 
   }
 
+  function toogleTaskCompleteById(taskId : String) {
+    const newTask = Task.map((task)=>{
+      if(task.key === taskId ) {
+        return {
+          ...task, iscomplete:  !task.iscomplete
+          
+        }
+      } else{
+        return task
+      }
+
+    })
+    setNewTask(newTask)
+ 
+  }
+    
     
 
   
