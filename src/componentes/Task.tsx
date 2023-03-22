@@ -39,11 +39,7 @@ export function Task() {
     console.log(Task);
   }
   function deleteTask(TaskContent: String) {
-    //deleteTask recebe TasktoDelete(concent)
-    const taskWithoutDeleteOne = Task.filter((Task) => {
-      //faz um filter na lista(ja que é um array )
-      return Task.content != TaskContent; //retorna o concent ja definido sem o TasktoDelete(content que sera apgado)
-    });
+    const taskWithoutDeleteOne = Task.filter((tasks)=> tasks.key != TaskContent) 
 
     setNewTask(taskWithoutDeleteOne); //seta o estado
     if (Task.length <= 1) {
