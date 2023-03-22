@@ -6,10 +6,10 @@ import { useState } from "react";
 import React from "react";
 
 export interface Itask {
-  key?: string;
+  key?: String;
   content: string;
   iscomplete: boolean;
-  deleteTask: ( TaskContent: string )=> void //passando a função como propriedade com o content em formato string
+  deleteTask: ( TaskId: string )=> void //passando a função como propriedade com o content em formato string
 
 }
 
@@ -36,16 +36,19 @@ export function Task() {
     ]);
 
     setTaskContent('');
-    console.log(Task);
+    
   }
-  function deleteTask(TaskContent: String) {
-    const taskWithoutDeleteOne = Task.filter((tasks)=> tasks.key != TaskContent) 
-
+  function deleteTask(TaskId: String) {
+    const taskWithoutDeleteOne = Task.filter((Task)=> {
+      return Task.key != TaskId}) 
+    //console.log(taskWithoutDeleteOne)
     setNewTask(taskWithoutDeleteOne); //seta o estado
+
+    /*
     if (Task.length <= 1) {
       const Clip = document.getElementById("dori");
       Clip.style.display = "flex";
-    }
+    }*/
   }
 
   return (
@@ -92,7 +95,7 @@ export function Task() {
         <footer className={styles.Line}></footer>
 
         {Task.map((task) => {
-          return <NewTask  tasks={task} />;
+          return <NewTask  tasks={task}    />;
           //aqui no deleteTask no return passei o deleteTaswk como o deleteTask que irei definidir nesse componente
         })}
       </main>
