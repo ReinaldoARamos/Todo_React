@@ -6,7 +6,7 @@ import { HtmlHTMLAttributes, useState } from "react";
 import React from "react";
 
 
-const localStorage_key = "todo:savedTask"
+const LOCAL_STORAGE_KEY = "todo:savedTask"
 
 export interface Itask {
   key?: string;
@@ -25,7 +25,7 @@ export function Task() {
 
   function setTasksSave(newTask : Itask[]) {
     setNewTask(newTask)
-    localStorage.setItem(localStorage_key, JSON.stringify(setTasksSave) )
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTask) )
   }
  
   function handleInputChange() {
@@ -33,9 +33,9 @@ export function Task() {
     setTaskContent(InputContent);
   }
 
-
+  
   function addNewTask() {
-    setNewTask([
+    setTasksSave([
       ...Task,
       {
         key: crypto.randomUUID(),
@@ -65,7 +65,7 @@ export function Task() {
     
     }) 
 
-    setNewTask(taskWithoutDeleteOne); 
+    setTasksSave(taskWithoutDeleteOne); 
 
       if (Task.length <= 1) {
         const Clip = document.getElementById("dori");
@@ -85,7 +85,7 @@ export function Task() {
       }
 
     })
-    setNewTask(newTask)
+    setTasksSave(newTask)
  
   }
     
