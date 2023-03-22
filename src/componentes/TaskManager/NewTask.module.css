@@ -75,3 +75,9 @@ transition: 0.2s;
 .CicleDone:hover{
   color: #1e6f9f;
 } 
+
+.textCompleted{
+  color: (--grey-500);
+  transition: 0.2;
+  text-decoration: line-through;
+}

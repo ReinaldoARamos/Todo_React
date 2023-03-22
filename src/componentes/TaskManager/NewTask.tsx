@@ -28,7 +28,7 @@ export function NewTask({tasks, onDelete, onToogle}: Props) { //passando o Task 
 
 
         <span>
-          <p> {tasks.content}</p>
+          <p className={tasks.iscomplete ? styles.textCompleted : ""}> {tasks.content}</p>
           </span>
         <button className={styles.Delete}>
         <Trash size={20} onClick={() => onDelete(tasks.key)}/>
